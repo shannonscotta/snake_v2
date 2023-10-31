@@ -1,11 +1,21 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Vite React",
+    "_version": "2.0.0",
     "compilerOptions": {
-        "lib": ["es2023", "DOM"],
-        "module": "Node16",
-        "target": "es2022",
-        "esModuleInterop": true,
+        "target": "esnext",
+        "useDefineForClassFields": true,
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": false,
         "skipLibCheck": true,
+        "esModuleInterop": false,
+        "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
-        "moduleResolution": "Node16",
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx"
     }
 }
