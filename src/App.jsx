@@ -8,11 +8,7 @@ import game from "./game";
 function App() {
   const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <Canvas />
-    </>
-  );
+  return <>{game()}</>;
 }
 
 export default App;
