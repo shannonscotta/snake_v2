@@ -1,6 +1,8 @@
 import express from "express";
 import pg from "pg";
 import dotenv from "dotenv";
+import cors from "cors";
+
 dotenv.config();
 const { PORT, DATABASE_URL } = process.env;
 const app = express();
@@ -9,7 +11,7 @@ const client = new pg.Client({
 });
 client.connect();
 app.use(express.json());
-app.use(express.static("public"));
+app.use(cors());
 app.get("/scoreboard", (req, res, next) => {
     client
         .query(`SELECT * FROM scoreboard ORDER BY score DESC`)
@@ -19,7 +21,10 @@ app.get("/scoreboard", (req, res, next) => {
 app.post("/scoreboard", (req, res, next) => {
     const { player, score } = req.body;
     client
-        .query(`INSERT INTO scoreboard(player, score) VALUES ($1, $2) RETURNING *`, [player, score])
+        .query(
+            `INSERT INTO scoreboard(player, score) VALUES ($1, $2) RETURNING *`,
+            [player, score]
+        )
         .then((data) => res.status(201).send(data.rows[0]))
         .catch(next);
 });
