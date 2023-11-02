@@ -1,4 +1,4 @@
-import Canvas from "./components/Canvas";
+import Canvas from "./Canvas";
 
 export default function Game() {
     const canvas = document.getElementById("canvas");

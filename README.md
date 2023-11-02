@@ -11,3 +11,12 @@ Yeah, now you got it.
 ### I'd rather play Metal Gear Solid
 
 Well, maybe you should. Now get out of here, you rascal!
+
+<!-- 
+# dev notes
+
+`createdb snake`
+`psql snake`
+`\i public/migration.sql` 
+
+-->
