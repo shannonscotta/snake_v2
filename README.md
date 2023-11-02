@@ -1,8 +1,13 @@
-# React + Vite
+# Snake
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Like Metal Gear Solid's Snake?
 
-Currently, two official plugins are available:
+You've set the bar way too high.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ...so like snake on a Nokia phone?
+
+Yeah, now you got it.
+
+### I'd rather play Metal Gear Solid
+
+Well, maybe you should. Now get out of here, you rascal!

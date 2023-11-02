@@ -2,18 +2,24 @@ import { useState, useEffect } from "react";
 export default function ScoreBoard() {
     const [data, setData] = useState(null);
     useEffect(() => {
-        fetch("http://localhost:8000/scoreboard")
-            .then((response) => response.json())
-            .then((jsonData) => {
+        async function fetchData() {
+            try {
+                const response = await fetch(
+                    "http://localhost:8000/scoreboard"
+                );
+                const jsonData = await response.json();
                 setData(jsonData);
-            })
-            .catch((err) => {
+            } catch (err) {
                 console.error(err);
-            });
-    }, []);
-    return data
-        ? data.map((entry) => (
-              <p key={entry.id}>{entry.player + " : " + entry.score}</p>
-          ))
-        : null;
+            }
+        }
+        fetchData();
+    });
+    return data ? (
+        data.map((entry) => (
+            <p key={entry.id}>{entry.player + " : " + entry.score}</p>
+        ))
+    ) : (
+        <p>Loading or there's an error...</p>
+    );
 }
