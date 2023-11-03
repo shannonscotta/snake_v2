@@ -14,7 +14,7 @@ export default function ScoreBoard() {
             }
         }
         fetchData();
-    });
+    }, [data]);
     return data ? (
         data.map((entry) => (
             <p key={entry.id}>{entry.player + " : " + entry.score}</p>
